@@ -1,1 +1,22 @@
+# Dependencies
+node_modules/
 frontend/node_modules/
+
+# Production builds
+dist/
+frontend/dist/
+backend/target/
+*.jar
+*.war
+
+# Environment & Logs
+*.log
+.env
+.env.local
+*.tmp
+
+# IDE / Editor
+.idea/
+.vscode/
+*.iml
+*.DS_Store

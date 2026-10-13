@@ -25,13 +25,16 @@ public class CorsConfig {
         // Allow credentials (cookies, authorization headers)
         config.setAllowCredentials(true);
 
-        // Allowed origin patterns for all local development ports
+        // Allowed origin patterns for local dev and cloud deployments (Vercel, Render)
         config.setAllowedOriginPatterns(Arrays.asList(
                 "http://localhost:*",
-                "http://127.0.0.1:*"
+                "http://127.0.0.1:*",
+                "https://*.vercel.app",
+                "https://*.onrender.com",
+                "https://*"
         ));
 
-        // Explicitly listed allowed origins (React dev servers)
+        // Explicitly listed allowed origins (React dev servers & common origins)
         config.setAllowedOrigins(Arrays.asList(
                 "http://localhost:5173",
                 "http://localhost:5174",
