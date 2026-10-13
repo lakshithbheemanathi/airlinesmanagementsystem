@@ -30,4 +30,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Launch Spring Boot with dynamic port mapping
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-8080} -Djava.security.egd=file:/dev/./urandom -jar app.jar"]
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-8080} -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE:-mysql} -Djava.security.egd=file:/dev/./urandom -jar app.jar"]
